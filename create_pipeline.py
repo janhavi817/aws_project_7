@@ -59,17 +59,17 @@ pipeline = {
             {
                 'name': 'Deploy',
                 'actions': [{
-                    'name': 'DeployToEC2',
+                    'name': 'DeployToS3',
                     'actionTypeId': {
                         'category': 'Deploy',
                         'owner': 'AWS',
-                        'provider': 'CodeDeploy',
+                        'provider': 'S3',
                         'version': '1'
                     },
                     'inputArtifacts': [{'name': 'BuildOutput'}],
                     'configuration': {
-                        'ApplicationName': 'NodeJS-WebApp',
-                        'DeploymentGroupName': 'NodeJSApp-ProdGroup'
+                        'BucketName': 'janhavi-nodejs-cicd-2026',
+                        'Extract': 'true'
                     },
                     'runOrder': 1
                 }]
