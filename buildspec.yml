@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      - npm install
+
+  build:
+    commands:
+      - echo "Build started"
+      - npm run build || echo "No build script"
+
+artifacts:
+  files:
+    - '**/*'
